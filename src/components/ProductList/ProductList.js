@@ -5,10 +5,8 @@ import './ProductList.css';
 import logo from '../../public/assets/nike.png'
 
 const ProductList = ({ cart, handleAddProductToCart }) => {
-
     return (
         <div className='product-list-container'>
-            {/* <div className="yellow-corner"></div> */}
             <img src={logo} alt='logo' style={{ width: '50px', height: '20px' }} />
             <h2>Our Products</h2>
             <div className='product-list'>
