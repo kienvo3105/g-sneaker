@@ -13,14 +13,13 @@ const App = () => {
 
   useEffect(() => {
     const handleBeforeUnload = () => {
-      // Lưu state vào localStorage khi ứng dụng sắp bị đóng
       localStorage.setItem('cart', JSON.stringify(cart));
     };
 
-    // Đăng ký sự kiện beforeunload khi component được mount
+
     window.addEventListener('beforeunload', handleBeforeUnload);
 
-    // Hủy đăng ký sự kiện khi component bị unmount
+
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
@@ -31,6 +30,7 @@ const App = () => {
     setCart(storedState);
     setLoading(false);
   }, [])
+
 
   if (loading)
     return null;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ItemCart.css'
 import minus from '../../public/assets/minus.png'
 import plus from '../../public/assets/plus.png'
@@ -24,12 +24,27 @@ const ItemCart = ({ product, setCart, cart }) => {
     };
 
     const handleRemoveFromCart = () => {
-        setCart(cart.filter((item) => item.id !== product.id));
+        const element = document.getElementById(`item-${product.id}`);
+        if (element) {
+            element.classList.add('remove');
+            setTimeout(() => {
+                setCart(cart.filter((item) => item.id !== product.id));
+            }, 500);
+        }
     };
 
+    useEffect(() => {
+        const delay = cart.findIndex((item) => item.id === product.id) * 100;
+        setTimeout(() => {
+            const element = document.getElementById(`item-${product.id}`);
+            if (element) {
+                element.classList.add('show');
+            }
+        }, delay);
+    }, [cart, product.id]);
 
     return (
-        <div className='item-container'>
+        <div className='item-container' id={`item-${product.id}`}>
             <div className='img-product-container'>
                 <div className='img-product-background' style={{ backgroundColor: product.color }}></div>
                 <img src={product.image} alt={product.name} className='image-item' />
