@@ -6,17 +6,20 @@ Sử dụng lệnh sau để sao chép dự án từ GitHub về máy tính củ
 
 ```bash
 git clone https://github.com/kienvo3105/g-sneaker.git
-
+```
 
 ## Bước 2: Truy cập thư mục dự án
+```bash
 cd github-repo-react
-
+```
 ## Bước 3: Cài đặt Dependencies
+```bash
 npm install
-
+```
 ## Bước 4: Chạy ứng dụng
+```bash
 npm start
-
+```
 ## Bước 5: Truy cập Trang web
 http://localhost:3000
 
