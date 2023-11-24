@@ -10,7 +10,7 @@ git clone https://github.com/kienvo3105/g-sneaker.git
 
 ## Bước 2: Truy cập thư mục dự án
 ```bash
-cd github-repo-react
+cd g-sneaker
 ```
 ## Bước 3: Cài đặt Dependencies
 ```bash
